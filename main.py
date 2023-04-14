@@ -32,7 +32,7 @@ def process2(data: List[int]) -> List[int]:
     return [foo(x) for x in data]
 
 def final_process(data1: List[int], data2: List[int]) -> List[int]:
-    """The final_process function is zip the input data and return its mean to a int list"""
+    """The final_process function is to find the difference of the iterate of data1 and data2 return its mean to a int list"""
     return np.mean([x - y for x, y in zip(data1, data2)])
 
 offload_url = 'http://192.168.191.92:5000' # TODO: Change this to the IP address of your server
