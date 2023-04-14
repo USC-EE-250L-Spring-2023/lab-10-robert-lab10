@@ -12,7 +12,7 @@ def generate_data() -> List[int]:
     return np.random.randint(100, 10000, 1000).tolist()
 
 def process1(data: List[int]) -> List[int]:
-    """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """The process1 function is to find the next largest prime number for the each element in the input data and return it to an int list"""
     def foo(x):
         """Find the next largest prime number."""
         while True:
@@ -22,7 +22,7 @@ def process1(data: List[int]) -> List[int]:
     return [foo(x) for x in data]
 
 def process2(data: List[int]) -> List[int]:
-    """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """The process2 function is to find the next largest prime number for the each element in the input data and return it to an int list"""
     def foo(x):
         """Find the next largest prime number."""
         while True:
@@ -32,7 +32,7 @@ def process2(data: List[int]) -> List[int]:
     return [foo(x) for x in data]
 
 def final_process(data1: List[int], data2: List[int]) -> List[int]:
-    """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """The final_process function is zip the input data and return its mean to a int list"""
     return np.mean([x - y for x, y in zip(data1, data2)])
 
 offload_url = 'http://192.168.191.92:5000' # TODO: Change this to the IP address of your server
@@ -81,10 +81,10 @@ def run(offload: Optional[str] = None) -> float:
         # TODO: Implement this case
         data1 = None
         def offload_process1(data):
-            nonlocal data1
-            response = requests.post(f"{offload_url}/process1", json=data)
-            # TODO: Send a POST request to the server with the input data
-            data1 = response.json()
+		nonlocal data1
+		# TODO: Send a POST request to the server with the input data
+		response = requests.post(f"{offload_url}/process1", json=data)
+		data1 = response.json()
         
         data2 = None
         def offload_process2(data):
